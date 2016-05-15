@@ -1,0 +1,55 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3-parsets and Angular</title>
+    <meta name="description" content="d3-parsets and Angular">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./scripts/d3-parsets-master/d3.parsets.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body ng-app="myApp">
+    <div class="row">
+      <h2 class="col-md-6 col-md-offset-4">d3-parsets wrapping by Angular</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" ng-controller="ParsetsCtrl">
+        <d3-parsets data="election" electorate="electorate"></d3-parsets>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="col-md-8 col-md-offset-2">Moving the handles of sliders, change possible vote for each of the candidates</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-1 col-md-offset-1">
+        <h4><br>Democrat</h4>
+      </div>
+      <div class="col-md-8" ng-controller="ParsetsCtrl">
+        <d3-slider class="democrat" data="election.slice(0,3)" ></d3-slider>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1 col-md-offset-1">
+        <h4><br>Republican</h4>
+      </div>
+      <div class="col-md-8" ng-controller="ParsetsCtrl">
+        <d3-slider class="republican" data="election.slice(3,6)"></d3-slider>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1 col-md-offset-1">
+        <h4><br>Independent</h4>
+      </div>
+      <div class="col-md-8" ng-controller="ParsetsCtrl">
+        <d3-slider class="independent" data="election.slice(6,9)"></d3-slider>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src="scripts/d3-parsets-master/d3.parsets.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/controllers/controllers.js"></script>
+    <script src="scripts/directives/angularD3Parsets.js"></script>
+    <script src="scripts/directives/angularD3Slider.js"></script>
+  </body>
+</html>

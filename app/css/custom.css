@@ -1,0 +1,61 @@
+.parsets.tooltip {
+  opacity: 1;
+}
+
+svg {
+  font: 13px sans-serif;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.brush rect.background {
+  fill-opacity: 0.75;
+}
+
+.brush .party {
+  fill-opacity: 0.75;
+}
+
+.brush .extent {
+  fill-opacity: 0.75;
+}
+
+.democrat .brush .party {
+  fill: #0066ad;
+}
+
+.democrat .brush .extent {
+  fill: #1d9dd8;
+}
+
+.democrat .brush rect.background {
+  fill: #aacdf0;
+}
+
+.republican .brush .party {
+  fill: #fb2d00;
+}
+
+.republican .brush .extent {
+   fill: #fb6d38;
+ }
+
+.republican .brush rect.background {
+  fill: #e69562;
+}
+
+.independent .brush .party {
+  fill: #1f6938;
+}
+
+.independent .brush .extent {
+  fill: #22a157;
+}
+
+.independent .brush rect.background {
+  fill: #69c08b;
+}
