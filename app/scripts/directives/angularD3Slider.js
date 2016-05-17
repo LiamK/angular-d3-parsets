@@ -16,9 +16,10 @@
             .attr("width", "100%");
 
           // on window resize, re-render d3 canvas
-          //window.onresize = function() {
-          //  return scope.$apply();
-          //};
+          window.onresize = function() {
+            return scope.$apply();
+          };
+
           scope.$watch(function(){
               return angular.element(window)[0].innerWidth;
             }, function(){
@@ -27,15 +28,16 @@
           );
 
           // watch for data changes and re-render
-          //scope.$watch('data', function(newVal) {
-          //  return scope.render(newVal);
-          //}, true);
+          scope.$watch('data', function(newVal) {
+            return scope.render(newVal);
+          }, true);
 
           // define render function
-          scope.render = function(data){
-            if (scope.party == 1) {data = data.slice(0,3)}
-            else if (scope.party == 2) {data = data.slice(3,6)}
-            else if (scope.party == 3) {data = data.slice(6,9)}
+          scope.render = function(dataTotal){
+            var data;
+            if (scope.party == 1) {data = dataTotal.slice(0,3)}
+            else if (scope.party == 2) {data = dataTotal.slice(3,6)}
+            else if (scope.party == 3) {data = dataTotal.slice(6,9)}
             // remove all previous items before render
             svgWrap.selectAll("*").remove();
 
@@ -137,6 +139,7 @@
             }
 
           };
+
         }
       };
     }]);
