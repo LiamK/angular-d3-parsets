@@ -28,7 +28,7 @@
 
         // watch for data changes and re-render
         scope.$watch('data', function(newVals) {
-          return scope.render(newVals);
+          return scope.render(scope.data);
         }, true);
 
 
