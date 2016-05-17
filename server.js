@@ -7,7 +7,7 @@
 
   app.use(express["static"](__dirname + '/app'));
 
-  app.listen("8080");
+  app.listen("8088");
 
   console.log('Server started at http://localhost:8080');
 

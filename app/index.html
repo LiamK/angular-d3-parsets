@@ -9,37 +9,37 @@
   </head>
   <body ng-app="myApp">
     <div class="row">
-      <h2 class="col-md-6 col-md-offset-4">d3-parsets wrapping by Angular</h2>
+      <h2 class="col-sm-6 col-sm-offset-4">d3-parsets wrapping by Angular</h2>
     </div>
     <div class="row">
-      <div class="col-md-8 col-md-offset-2" ng-controller="ParsetsCtrl">
+      <div class="col-sm-8 col-sm-offset-2" ng-controller="ParsetsCtrl">
         <d3-parsets data="election" electorate="electorate"></d3-parsets>
       </div>
     </div>
     <div class="row">
-      <h3 class="col-md-8 col-md-offset-2">Moving the handles of sliders, change possible vote for each of the candidates</h3>
+      <h3 class="col-sm-8 col-sm-offset-2">Moving the handles of sliders, change possible vote for each of the candidates</h3>
     </div>
     <div class="row">
-      <div class="col-md-1 col-md-offset-1">
+      <div class="col-sm-1 col-sm-offset-1">
         <h4><br>Democrat</h4>
       </div>
-      <div class="col-md-8" ng-controller="ParsetsCtrl">
+      <div class="col-sm-8" ng-controller="ParsetsCtrl">
         <d3-slider class="democrat" data="election.slice(0,3)" ></d3-slider>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-1 col-md-offset-1">
+      <div class="col-sm-1 col-sm-offset-1">
         <h4><br>Republican</h4>
       </div>
-      <div class="col-md-8" ng-controller="ParsetsCtrl">
+      <div class="col-sm-8" ng-controller="ParsetsCtrl">
         <d3-slider class="republican" data="election.slice(3,6)"></d3-slider>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-1 col-md-offset-1">
+      <div class="col-sm-1 col-sm-offset-1">
         <h4><br>Independent</h4>
       </div>
-      <div class="col-md-8" ng-controller="ParsetsCtrl">
+      <div class="col-sm-8" ng-controller="ParsetsCtrl">
         <d3-slider class="independent" data="election.slice(6,9)"></d3-slider>
       </div>
     </div>
