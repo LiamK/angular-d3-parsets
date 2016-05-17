@@ -59,3 +59,7 @@ svg {
 .independent .brush rect.background {
   fill: #69c08b;
 }
+
+.text-svg{
+  font-size: 14px;
+}

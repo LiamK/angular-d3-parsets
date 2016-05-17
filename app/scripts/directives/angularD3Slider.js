@@ -6,7 +6,8 @@
       return {
         restrict: 'EA',
         scope: {
-          data: "="
+          data: "=",
+          party: "="
         },
         link: function(scope, iElement, iAttrs) {
           var d3 = $window.d3;
@@ -18,6 +19,7 @@
           window.onresize = function() {
             return scope.$apply();
           };
+
           scope.$watch(function(){
               return angular.element(window)[0].innerWidth;
             }, function(){
@@ -31,7 +33,11 @@
           }, true);
 
           // define render function
-          scope.render = function(data){
+          scope.render = function(dataTotal){
+            var data;
+            if (scope.party == 1) {data = dataTotal.slice(0,3)}
+            else if (scope.party == 2) {data = dataTotal.slice(3,6)}
+            else if (scope.party == 3) {data = dataTotal.slice(6,9)}
             // remove all previous items before render
             svgWrap.selectAll("*").remove();
 
@@ -71,24 +77,21 @@
               .attr("class", "brush")
               .call(brush);
 
-            var text1 = brushg.append("text")
-              .attr("class", "text-icon")
+            var text1 = svg.append("text")
+              .attr("class", "text-svg")
               .attr("text-anchor", "middle")
-              .attr("font-size", 0.02*width)
               .attr("dy", 0.08*width)
               .attr("dx", width*0.15);
 
-            var text2 = brushg.append("text")
-              .attr("class", "text-icon")
+            var text2 = svg.append("text")
+              .attr("class", "text-svg")
               .attr("text-anchor", "middle")
-              .attr("font-size", 0.02*width)
               .attr("dy", 0.08*width)
               .attr("dx", width*0.5);
 
-            var text3 = brushg.append("text")
-              .attr("class", "text-icon")
+            var text3 = svg.append("text")
+              .attr("class", "text-svg")
               .attr("text-anchor", "middle")
-              .attr("font-size", 0.02*width)
               .attr("dy", 0.08*width)
               .attr("dx", width*0.85);
 
@@ -134,7 +137,9 @@
               svg.classed("selecting", !d3.event.target.empty());
               scope.$apply();
             }
+
           };
+
         }
       };
     }]);

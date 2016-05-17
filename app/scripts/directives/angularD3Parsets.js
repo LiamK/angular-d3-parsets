@@ -7,6 +7,7 @@
       restrict: 'EA',
       scope: {
         data: "=",
+        totals: "=",
         electorate: "="
       },
       link: function(scope, iElement, iAttrs) {
@@ -26,9 +27,29 @@
           }
         );
 
+        var get_totals = function(newVals) {
+          var bernie_total = 0, hillary_total = 0, trump_total = 0;
+          if (!newVals) {
+            return { 'Bernie':bernie_total,
+              'Hillary':hillary_total,
+              'Trump':trump_total };
+          }
+          for (var i=0; i<newVals.length; i++) {
+            var row = newVals[i];
+            if (row['Candidate'] == 'Bernie') { bernie_total += row['Count']*scope.electorate[row['Party']]/100}
+            if (row['Candidate'] == 'Hillary') { hillary_total += row['Count']*scope.electorate[row['Party']]/100}
+            if (row['Candidate'] == 'Trump') { trump_total += row['Count']*scope.electorate[row['Party']]/100}
+          }
+          return { 'Bernie':bernie_total,
+            'Hillary':hillary_total,
+            'Trump':trump_total };
+
+        };
+
         // watch for data changes and re-render
         scope.$watch('data', function(newVals) {
-          return scope.render(newVals);
+          scope.totals = get_totals(newVals);
+          return scope.render(scope.data);
         }, true);
 
 
@@ -87,6 +108,7 @@
             .attr("width", chart.width())
             .attr("height", chart.height());
           vis.datum(data).call(chart);
+
         };
       }
     };
