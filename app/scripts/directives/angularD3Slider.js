@@ -68,10 +68,13 @@
               .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+	    /* scale on bottom of slider */
+	    /*
             svg.append("g")
               .attr("class", "x axis")
               .attr("transform", "translate(0," + height/4 + ")")
               .call(d3.svg.axis().scale(x).orient("bottom"));
+            */
 
             var brushg = svg.append("g")
               .attr("class", "brush")
@@ -80,19 +83,19 @@
             var text1 = svg.append("text")
               .attr("class", "text-svg")
               .attr("text-anchor", "middle")
-              .attr("dy", 0.08*width)
+              .attr("dy", 0.06*width)
               .attr("dx", width*0.15);
 
             var text2 = svg.append("text")
               .attr("class", "text-svg")
               .attr("text-anchor", "middle")
-              .attr("dy", 0.08*width)
+              .attr("dy", 0.06*width)
               .attr("dx", width*0.5);
 
             var text3 = svg.append("text")
               .attr("class", "text-svg")
               .attr("text-anchor", "middle")
-              .attr("dy", 0.08*width)
+              .attr("dy", 0.06*width)
               .attr("dx", width*0.85);
 
             brushg.insert("rect",".extent")
@@ -128,9 +131,9 @@
               data[0].Count = extent[0];
               data[1].Count = extent[1]-extent[0];
               data[2].Count = 100-extent[1];
-              text1.text(data[0].Candidate+": "+d3.round(data[0].Count,2));
-              text2.text(data[1].Candidate+": "+d3.round(data[1].Count,2));
-              text3.text(data[2].Candidate+": "+d3.round(data[2].Count,2));
+              text1.text(data[0].Candidate+": "+d3.round(data[0].Count,2)+"%");
+              text2.text(data[1].Candidate+": "+d3.round(data[1].Count,2)+"%");
+              text3.text(data[2].Candidate+": "+d3.round(data[2].Count,2)+"%");
             }
 
             function brushend() {

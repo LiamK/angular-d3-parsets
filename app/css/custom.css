@@ -62,4 +62,16 @@ svg {
 
 .text-svg{
   font-size: 14px;
+  padding-top:0.5 rem;
+}
+.slider-label {
+  font-size: 16px;
+  margin-top:1rem;
+  display: inline-block;
+}
+.top-border {
+    border-top: 1px solid #ddd;
+}
+.bottom-border {
+    border-bottom: 1px solid #ddd;
 }
