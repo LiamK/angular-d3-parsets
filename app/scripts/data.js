@@ -2,7 +2,7 @@ var dataJSON = {
   "percentOfElectorate": {
     Democrat: 30,
     Republican: 26,
-    Independent: 44
+    independent: 44
   },
   "data": [
     {Party: "Democrat", Candidate: "Bernie", Count: 39},
@@ -11,8 +11,19 @@ var dataJSON = {
     {Party: "Republican", Candidate: "Bernie", Count: 17},
     {Party: "Republican", Candidate: "Hillary", Count: 13},
     {Party: "Republican", Candidate: "Trump", Count: 70},
-    {Party: "Independent", Candidate: "Bernie", Count: 63},
-    {Party: "Independent", Candidate: "Hillary", Count: 17},
-    {Party: "Independent", Candidate: "Trump", Count: 20}
+    {Party: "independent", Candidate: "Bernie", Count: 63},
+    {Party: "independent", Candidate: "Hillary", Count: 17},
+    {Party: "independent", Candidate: "Trump", Count: 20}
+  ],
+  "favorability": [
+    {Party: "Democrat", Candidate: "Bernie", Count: 0},
+    {Party: "Democrat", Candidate: "Hillary", Count: 0},
+    {Party: "Democrat", Candidate: "Trump", Count: 0},
+    {Party: "Republican", Candidate: "Bernie", Count: 0},
+    {Party: "Republican", Candidate: "Hillary", Count: 0},
+    {Party: "Republican", Candidate: "Trump", Count: 0},
+    {Party: "independent", Candidate: "Bernie", Count: 0},
+    {Party: "independent", Candidate: "Hillary", Count: 0},
+    {Party: "independent", Candidate: "Trump", Count: 0}
   ]
 };

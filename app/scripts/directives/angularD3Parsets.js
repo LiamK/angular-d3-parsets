@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('myApp.directives')
-    .directive('d3Parsets', ['$window', function($window) {
+    .directive('d3Parsets', ['$window', '$timeout', function($window, $timeout) {
     return {
       restrict: 'EA',
       scope: {
@@ -28,22 +28,31 @@
         );
 
         var get_totals = function(newVals) {
-          var bernie_total = 0, hillary_total = 0, trump_total = 0;
-          if (!newVals) {
-            return { 'Bernie':bernie_total,
-              'Hillary':hillary_total,
-              'Trump':trump_total };
-          }
-          for (var i=0; i<newVals.length; i++) {
-            var row = newVals[i];
-            if (row['Candidate'] == 'Bernie') { bernie_total += row['Count']*scope.electorate[row['Party']]/100}
-            if (row['Candidate'] == 'Hillary') { hillary_total += row['Count']*scope.electorate[row['Party']]/100}
-            if (row['Candidate'] == 'Trump') { trump_total += row['Count']*scope.electorate[row['Party']]/100}
-          }
-          return { 'Bernie':bernie_total,
-            'Hillary':hillary_total,
-            'Trump':trump_total };
+          var bernie_total = 0,
+              hillary_total = 0,
+              trump_total = 0;
 
+          if (newVals) {
+            for (var i=0; i<newVals.length; i++) {
+              var row = newVals[i];
+              if (row['Candidate'] == 'Bernie') {
+                bernie_total += row['Count']*scope.electorate[row['Party']]/100
+              }
+              if (row['Candidate'] == 'Hillary') {
+                hillary_total += row['Count']*scope.electorate[row['Party']]/100
+              }
+              if (row['Candidate'] == 'Trump') {
+                trump_total += row['Count']*scope.electorate[row['Party']]/100
+              }
+            }
+          }
+          return [{ key: "Vote Percent",
+                    values: [
+  	                   { 'label': 'Bernie', 'value': bernie_total },
+  	                   { 'label': 'Hillary', 'value': hillary_total },
+  	                   { 'label': 'Trump', 'value': trump_total }
+                    ]
+                 }]
         };
 
         // watch for data changes and re-render
@@ -51,6 +60,7 @@
           scope.totals = get_totals(newVals);
           return scope.render(scope.data);
         }, true);
+
 
 
         // define render function
