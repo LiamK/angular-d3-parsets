@@ -28,6 +28,7 @@
                 showControls: false,
                 showLegend: false,
                 //color: ["#2f107a", "#07586f", "#b35d06"],
+                //http://paletton.com/#uid=74i1W0km6lR2qrsccoMu+mqUFfi
                 barColor: ["#2f107a", "#07487f", "#b35d06"],
                 //height: 350,
                 margin : {
@@ -52,7 +53,7 @@
                 },
                 tooltip: {
                     contentGenerator: function(d) {
-                        return '<span>'+d.data.candidate+'</span>' +
+                        return '<span>'+d.data.label+'</span>' +
                                '<span>&nbsp;'+d3.format(',.2f')(d.data.value)+'%</span>';
                     }
                 }
