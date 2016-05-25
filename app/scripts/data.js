@@ -11,9 +11,9 @@ var dataJSON = {
     {Party: "Republican", Candidate: "Bernie", Count: 17},
     {Party: "Republican", Candidate: "Hillary", Count: 13},
     {Party: "Republican", Candidate: "Trump", Count: 70},
-    {Party: "independent", Candidate: "Bernie", Count: 63},
-    {Party: "independent", Candidate: "Hillary", Count: 17},
-    {Party: "independent", Candidate: "Trump", Count: 20}
+    {Party: "independent", Candidate: "Bernie", Count: 45},
+    {Party: "independent", Candidate: "Hillary", Count: 29},
+    {Party: "independent", Candidate: "Trump", Count: 26}
   ],
   "favorability": [
     {Party: "Democrat", Candidate: "Bernie", Count: 0},
