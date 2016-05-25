@@ -62,8 +62,8 @@
         <img src="./css/images/election_calculator.png" />
       </noscript>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2" ng-controller="ParsetsCtrl">
+    <div class="row" ng-controller="ParsetsCtrl">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
         <d3-parsets data="election" electorate="electorateScope" totals="totals"></d3-parsets>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
