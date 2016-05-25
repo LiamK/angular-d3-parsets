@@ -26,11 +26,6 @@
 .category-8 { fill: #bcbd22; stroke: #bcbd22; }
 .category-9 { fill: #17becf; stroke: #17becf; }
 
-/* http://paletton.com/#uid=3000u0klllZaWxbglr7qfhdvCbJ */
-.category-0 { fill: #236969; stroke: #236969; }
-.category-1 { fill: #af3a3a; stroke: #af3a3a; }
-.category-2 { fill: #7fa336; stroke: #7fa336; }
-
 .tooltip {
   background-color: rgba(242, 242, 242, .6);
   position: absolute;

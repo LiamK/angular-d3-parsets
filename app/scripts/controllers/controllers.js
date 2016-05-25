@@ -4,7 +4,7 @@
   angular.module('myApp.controllers', ['nvd3'])
     .controller('ParsetsCtrl', ['$scope', function ($scope) {
       $scope.election = dataJSON.data;
-      $scope.electorate = dataJSON.percentOfElectorate;
+      $scope.electorateScope = dataJSON.percentOfElectorate;
       $scope.party = [1,2,3];
 
       $scope.totals =  [
@@ -18,7 +18,6 @@
         ]
 
       $scope.$watch('totals', function(newVals) {
-        console.log(newVals);
         $scope.totals = newVals;
       }, true);
 

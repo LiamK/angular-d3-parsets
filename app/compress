@@ -1,0 +1,13 @@
+:
+yuglify --combine dist/main \
+	css/custom.css \
+        scripts/d3-parsets-master/d3.parsets.css
+
+uglifyjs --compress --mangle --output dist/main.min.js -- \
+	scripts/d3-parsets-master/d3.parsets.js \
+	scripts/app.js \
+        scripts/data.js \
+	scripts/controllers/controllers.js \
+	scripts/directives/angularD3Parsets.js \
+	scripts/directives/angularD3Slider.js
+echo "Generated combined JS file: dist/main.min.js"
