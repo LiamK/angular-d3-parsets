@@ -1,6 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
     font-family: "Roboto", sans-serif;
     color: #666;
+    margin-bottom: 80px;
 }
 
 .parsets.tooltip {
@@ -88,3 +93,20 @@ svg {
 .category-0 { fill: #236969; stroke: #236969; }
 .category-1 { fill: #af3a3a; stroke: #af3a3a; }
 .category-2 { fill: #7fa336; stroke: #7fa336; }
+.extra-room {
+  margin-top: 2rem;
+}
+.share-button {
+  font-size: 1.75em;
+  margin-top: -9px;
+  display:block;
+}
+footer {
+  position: absolute;
+  padding-top:10px;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}

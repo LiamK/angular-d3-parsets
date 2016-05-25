@@ -28,7 +28,7 @@
                 showLegend: false,
                 //color: ["#2f107a", "#07586f", "#b35d06"],
                 //http://paletton.com/#uid=74i1W0km6lR2qrsccoMu+mqUFfi
-                barColor: ["#2f107a", "#07487f", "#b35d06"],
+                barColor: ["#2f107a", "#0728af", "#b35d06"],
                 //height: 350,
                 margin : {
                     top: 20,
