@@ -12,8 +12,10 @@
   <meta property="og:url" content="http://three4all.freespeechnow.net/">
   <meta property="og:title" content="2016 Presidential Three-4-All">
   <meta property="og:description" content="Sanders, Clinton and Trump.  Who would win in a three-way election?">
-  <meta property="og:image" content="./css/images/election_calculator.png">
+  <meta property="og:image" content="http://three4all.freespeechnow.net/images/election_calculator.png">
   <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,100,300,900,500">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -47,20 +49,71 @@
     ga('send', 'pageview');
   
   </script>
+  <style>
+      .extra-room {
+          margin-top: 2rem;
+      }
+      .heading {
+          font-size: 2.5em;
+      }
+      .share-button {
+          font-size: 1.75em;
+          margin-top: -9px;
+          display:block;
+      }
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+footer {
+  position: absolute;
+  padding-top:10px;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.twitter-wrapper {
+    padding-top:5px;
+    display: inline;
+}
+  </style>
 </head>
 <body ng-app="myApp">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=712916698850077";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
   <div class="container" style="margin-bottom:2em;">
-    <div class="row">
-        <h2 class="col-xs-12 text-center">2016 Presidential Three-<i>4</i>-All</h2>
-      <noscript>
-        <h4 class="text-danger"><i class="fa fa-exclamation-circle"></i>
+    <div class="row extra-room">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>2016 Presidential Three-<i>4</i>-All</h2>
+          </div>
+        </div>
+        <noscript>
+          <h4 class="text-danger"><i class="fa fa-exclamation-circle"></i>
                 The chart requires JavaScript, and it appears
                 JavaScript is not enabled in your browser.
-        </h4>
-        <p> Here are the <a target="_blank" href="http://www.enable-javascript.com/" target="_blank">
+          </h4>
+          <p> Here are the <a target="_blank" href="http://www.enable-javascript.com/" target="_blank">
             instructions on how to enable JavaScript in your web browser</a>.</p>
-        <img src="./css/images/election_calculator.png" />
-      </noscript>
+          <img src="./css/images/election_calculator.png" />
+        </noscript>
+      </div>
     </div>
     <div class="row" ng-controller="ParsetsCtrl">
       <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
@@ -197,6 +250,26 @@
         </div>
       </div>
   </div>
+      <footer>
+         <div class="container" >
+         <div class="row" >
+         <div class="col-xs-12" >
+         <div class="row" >
+         <div class="col-xs-4 col-sm-2 col-sm-offset-3 text-center" >
+            <div class="fb-share-button" data-href="http://three4all.freespeechnow.net/" data-layout="button" data-mobile-iframe="true"></div>
+         </div>
+         <div class="col-xs-4 col-sm-2 text-center" >
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://three4all.freespeechnow.org/" data-text="Sanders vs Clinton vs Trump"></a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+         </div>
+         <div class="col-xs-4 col-sm-2 text-center" >
+         <a class="share-button" href="mailto:three4all@freespeechnow.net"><i class="fa fa-envelope"></i></a>
+         </div>
+         </div>
+        </div>
+        </div>
+        </div>
+      </footer>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
