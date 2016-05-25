@@ -1,7 +1,7 @@
 :
 yuglify --combine dist/main \
-	css/custom.css \
-        scripts/d3-parsets-master/d3.parsets.css
+        scripts/d3-parsets-master/d3.parsets.css \
+	css/custom.css
 
 uglifyjs --compress --mangle --output dist/main.min.js -- \
 	scripts/d3-parsets-master/d3.parsets.js \
